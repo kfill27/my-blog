@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+
+    <!-- Google fonts: Nixie One & Open Sans -->
 		  <title>Crumblr</title>
-  
-		  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans' rel='stylesheet' type='text/css'>
+		  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-Î' => true %>
 		  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
       <!-- Bootstrap -->
@@ -16,20 +18,35 @@
         <div class = "page-header">
           <ul class = "nav nav-pills pull-right">
             <li><%= link_to "Home", root_url %></li>
-            <li><%= link_to "Manage Posts", posts_url %></li>
             <li><%= link_to "About", about_url %></li>
+        <% if user_signed_in? %>
+            <li>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            </li>
+            <li><%= link_to "Manage Posts", posts_url %></li>
+        <% else %>
+            <li>
+            <%= link_to('Login', new_user_session_path)  %>  
+            </li>
+        <% end %>
           </ul>
            <h1> 
             <%=link_to "Kyra Fillmore", "/" %>
-          <small>// Learning to Code</small>
+          <small>// Web Developer</small>
           </h1>
         </div>
       </div>
+      <div class = "jumbotron">
+        <h1> Welcome to my blog </h1>
+      </div>
+
       <div class = "row">
         <div class = "col-md-6 col-md-offset-3">
 		<%= yield %>
         </div>
       </div>
 
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 		</body>
 	</html>
