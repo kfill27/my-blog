@@ -30,11 +30,11 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 38px;
-	color: #fff !important;
+	/*color: #fff !important;*/
 }
 
-.jumbotron {
+./*jumbotron {
 	background: url(https://download.unsplash.com/photo-1421284621639-884f4129b61d);
 	background-size: cover;
 	height: 500px;
-}
+}*/
