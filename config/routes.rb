@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts
   get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
   # get 'sign_out' => 'users#sign_out'
   # get 'sign_in' => 'users#sign_in'
   # get 'sign_up' => 'users#sign_up'
   root 'pages#welcome'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
